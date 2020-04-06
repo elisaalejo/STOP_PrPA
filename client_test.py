@@ -45,17 +45,19 @@ def new_play(letter):
     print("\n____Empezamos nueva ronda_____\n")
     while (not(stop)):
         print("\n", table)
-        tema = input("\nQue tema quieres rellenar?\n('STOP' para parar)\n|\n->")
+        tema = input("\n¿Que tema quieres rellenar?\n('STOP' para parar)\n\n->")
         if (not(stop)):
             if (tema == "STOP"):
                 Stop()
             elif (tema in table):
-                msg = "\n¿Que "+ tema + " se te ocurre con la letra '"+ letter + "' ?\n('STOP' para parar, 'BACK' para elegir tema de nuevo)\n|\n->"
+                msg = "\n¿Que "+ tema + " se te ocurre con la letra '"+ letter + "' ?\n('STOP' para parar, 'BACK' para elegir tema de nuevo)\n\n->"
                 word = input(msg)
                 if (word == "STOP"):
                     Stop()
                 elif (word != "BACK"):
                     insert_word(word, tema, table, letter)
+                    print('\nok')
+                    print("\n\n____________________\n")
             else:
                 print("\nEse tema no existe actualmente... Prueba de nuevo")
         else:
